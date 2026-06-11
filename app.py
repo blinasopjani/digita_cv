@@ -9,17 +9,21 @@ resume_file = current_dir / "assets" / "CV.pdf"
 profile_pic = current_dir / "assets" / "profile-pic.png"
 
 # --- GENERAL SETTINGS ---
-PAGE_TITLE = "Digital CV | Egezon Baruti"
+PAGE_TITLE = "Digital CV | Blina Sopjani"
 PAGE_ICON = ":wave:"
-NAME = "Egezon Baruti"
+NAME = "Blina Sopjani"
 DESCRIPTION = """
-Data Scientist specializing in spatial-sensor data and data-driven decision-making.
+Software & AI Engineer | AI Automation Engineer & Full-Stack Developer.
 """
-EMAIL = "egzonbaruti@yahoo.com"
+EMAIL = "blina.sopjani@gmail.com"
 SOCIAL_MEDIA = {
-    "LinkedIn": "https://www.linkedin.com/in/egezonbaruti",
-    # "GitHub": "https://github.com",
-    # "Twitter": "https://twitter.com",
+    "LinkedIn": "https://www.linkedin.com/in/blina-sopjani/",
+    "GitHub": "https://github.com/blinasopjani",
+}
+PROJECTS = {
+    "🏆 RSNA Brain Aneurysm Detection - Deep learning pipeline for aneurysm detection": "https://github.com/blinasopjani/RSNA-Aneurysm",
+    "🏆 UniFLIX Streaming API - Secure Java Spring Boot enterprise backend": "https://github.com/blinasopjani/uniflix-movie-api",
+    "🏆 Student Dropout Prediction API - Random Forest classifier for academic scoring": "https://github.com/blinasopjani/Student-Dropout-Prediction",
 }
 
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
@@ -58,10 +62,10 @@ st.write("\n")
 st.subheader("Experience & Qualifications")
 st.write(
     """
-- ✔️ Extensive experience with spatial-sensor data and algorithm development.
-- ✔️ Skilled in Python (FastAPI, Pandas, Numpy), SQL, DBT, and Airflow.
-- ✔️ Experienced in visualizing and analyzing sensor data to deliver insights.
-- ✔️ Proficient in PowerBI and interactive dashboard development.
+- ✔️ Solid academic and practical background in Computer Science, Big Data, and AI.
+- ✔️ Experience in developing computer vision systems (YOLO) and ML models (Random Forest, SVM).
+- ✔️ Proficient in backend architecture using Java (Spring Boot) and Python.
+- ✔️ Experienced in building predictive pipelines, data automation, and dashboard visualization.
 """
 )
 
@@ -70,10 +74,10 @@ st.write("\n")
 st.subheader("Hard Skills")
 st.write(
     """
-- 👩‍💻 Programming: Python (FastAPI, Scikit-learn, Pandas), SQL, DBT
-- 📊 Data Visualization: PowerBI, Streamlit
-- 🗄️ Databases: Snowflake, AWS, PostgreSQL
-- 🤖 Machine Learning: Neural networks, classification algorithms
+- 👩‍💻 Programming: Python, Java (Spring Boot), C# .NET, JavaScript, React Native
+- 🤖 Machine Learning & AI: Computer Vision (YOLO, OpenCV), NLP, Scikit-learn
+- 🗄️ Databases & Tools: PostgreSQL, Git
+- 📊 Data Visualization: Power BI
 """
 )
 
@@ -83,87 +87,69 @@ st.subheader("Work History")
 st.write("---")
 
 # --- JOB 1
-st.write("🚧", "**Data Scientist | TIVE Inc., Prishtina**")
-st.write("11/2023 - 11/2024")
+st.write("🚧", "**Project Manager | Siqa Store, Remote**")
+st.write("01/2025 - Present")
 st.write(
     """
-- ► Built classification algorithms for spatial-sensor data using Python (FastAPI), SQL, DBT, and Airflow.
-- ► Analyzed and visualized sensor data trends to support decision-making.
+- ► Managing project lifecycles and coordinating remote team operations.
+- ► Leading strategic planning and project execution processes.
 """
 )
 
 # --- JOB 2
 st.write("\n")
-st.write("🚧", "**Data Scientist | Raiffeisen Bank Kosovo, Prishtina**")
-st.write("10/2021 - 08/2023")
+st.write("🚧", "**Python & Data Science Intern | Tectigon LLC, Pristina**")
+st.write("02/2026 - 04/2026")
 st.write(
     """
-- ► Validated ML scorecards in collaboration with Raiffeisen Bank International.
-- ► Forecasted patterns using advanced data science techniques.
-- ► Developed impactful PowerBI dashboards for business insights.
+- ► Automated data extraction workflows and built predictive ML models for trend forecasting.
+- ► Designed executive reports and interactive dashboards using Power BI.
 """
 )
 
 # --- JOB 3
 st.write("\n")
-st.write("🚧", "**AI Instructor | OSCE, Prishtina**")
-st.write("05/2023 (Fixed-term)")
+st.write("🚧", "**AI Developer Intern | KPN Telecom, Netherlands**")
+st.write("01/2025 - 06/2025")
 st.write(
     """
-- ► Delivered training on large language models (LLMs) and generative AI.
-- ► Equipped participants with tools to integrate AI in public relations strategies.
+- ► Developed an automated FTU installation validation system using YOLO object detection.
+- ► Significantly reduced manual hardware inspection overhead.
 """
 )
 
 # --- JOB 4
 st.write("\n")
-st.write("🚧", "**Coding Instructor | BIT Academy, Prishtina**")
-st.write("05/2022 - 05/2023")
+st.write("🚧", "**IT Instructor | NdreqiNotat.com, Pristina**")
+st.write("09/2024 - 09/2025")
 st.write(
     """
-- ► Taught Python, SQL, and Django with applications in data science.
-- ► Guided students in machine learning and data visualization projects.
-- ► Conducted backend development workshops and GUI programming with Tkinter.
+- ► Taught programming fundamentals, algorithms, and logical problem-solving.
+- ► Reinforced clean coding practices across student cohorts.
 """
 )
 
 # --- JOB 5
 st.write("\n")
-st.write("🚧", "**Teaching Assistant | London School of Economics / Kolegji Riinvest, Prishtina**")
-st.write("10/2022 - Present (Part-time)")
+st.write("🚧", "**Java & Web Developer Intern | Sharp Group LTD, Pristina**")
+st.write("10/2023 - 11/2023")
 st.write(
     """
-- ► Assisted in teaching Machine Learning and Business Analytics.
-- ► Supported students in building machine learning models and data strategies.
+- ► Built backend Java applications and web interfaces.
+- ► Integrated frontend HTML/JS with database endpoints for client projects.
 """
 )
 
-# --- JOB 6
+# --- EDUCATION ---
 st.write("\n")
-st.write("🚧", "**Data Analyst | Finca Kosovo, Prishtina**")
-st.write("06/2021 - 10/2021")
-st.write(
-    """
-- ► Developed and implemented machine learning models for scoring.
-- ► Automated daily reports and created data visualizations for stakeholders.
-"""
-)
+st.subheader("Education")
+st.write("---")
+st.write("🎓", "**BSc in Computer Science** - Universum International College, Pristina")
+st.write("🎓", "**Erasmus Exchange (Big Data & AI)** - Inholland University of Applied Sciences, Netherlands")
 
-# --- JOB 7
+# --- PROJECTS & ACCOMPLISHMENTS ---
 st.write("\n")
-st.write("🚧", "**Math and IT Teacher | International School of Prishtina, Prishtina**")
-st.write("09/2015 - 05/2021")
-st.write(
-    """
-- ► Taught Mathematics, IT, and introductory machine learning.
-- ► Served as Vice Principal, showcasing leadership in curriculum development.
-- ► Instructed robotics and coding with Python and Scratch.
-"""
-)
-
-# --- Projects & Accomplishments ---
-# st.write("\n")
-# st.subheader("Projects & Accomplishments")
-# st.write("---")
-# for project, link in SOCIAL_MEDIA.items():
-#     st.write(f"[{project}]({link})")
+st.subheader("Projects & Accomplishments")
+st.write("---")
+for project, link in PROJECTS.items():
+    st.write(f"[{project}]({link})")
