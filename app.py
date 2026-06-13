@@ -263,78 +263,9 @@ elif page == "Projects":
 
     st.write("")
 
-    # Custom CSS for Premium Design
-    st.markdown("""
-    <style>
-    .project-card {
-        background-color: var(--secondary-background-color);
-        border: 1px solid rgba(128, 128, 128, 0.2);
-        border-radius: 16px;
-        padding: 24px;
-        margin-bottom: 20px;
-        min-height: 280px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-    }
-    .project-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-        border-color: #ff4b4b; /* Subtle highlight on hover */
-    }
-    .project-category {
-        font-size: 0.75em;
-        font-weight: 600;
-        letter-spacing: 1px;
-        color: #ff4b4b;
-        text-transform: uppercase;
-        margin-bottom: 6px;
-    }
-    .project-title {
-        font-size: 1.25em;
-        font-weight: 700;
-        color: var(--text-color);
-        margin-bottom: 10px;
-    }
-    .project-desc {
-        font-size: 0.9em;
-        color: var(--text-color);
-        opacity: 0.85;
-        line-height: 1.6;
-        margin-bottom: 18px;
-    }
-    .project-tag {
-        background-color: var(--background-color);
-        border: 1px solid rgba(128, 128, 128, 0.25);
-        color: var(--text-color);
-        border-radius: 12px;
-        padding: 4px 12px;
-        font-size: 0.75em;
-        transition: background-color 0.2s;
-    }
-    .project-tag:hover {
-        background-color: rgba(255, 75, 75, 0.1);
-        border-color: #ff4b4b;
-    }
-    .project-btn {
-        color: #ff4b4b !important;
-        background-color: transparent;
-        border: 1.5px solid #ff4b4b;
-        padding: 6px 16px;
-        border-radius: 20px;
-        font-size: 0.85em;
-        font-weight: 600;
-        text-decoration: none !important;
-        transition: all 0.2s ease;
-    }
-    .project-btn:hover {
-        background-color: #ff4b4b;
-        color: white !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+    # Load CSS from external file
+    with open("styles/main.css") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
     # Render cards in 2-column grid
     LANG_ICON = {
