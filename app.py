@@ -13,11 +13,7 @@ SOCIAL_MEDIA = {
     "LinkedIn": "https://www.linkedin.com/in/blina-sopjani/",
     "GitHub": "https://github.com/blinasopjani",
 }
-PROJECTS = {
-    "🏆 RSNA Brain Aneurysm Detection - Deep learning pipeline for aneurysm detection": "https://github.com/blinasopjani/RSNA-Aneurysm",
-    "🏆 UniFLIX Streaming API - Secure Java Spring Boot enterprise backend": "https://github.com/blinasopjani/uniflix-movie-api",
-    "🏆 Student Dropout Prediction API - Random Forest classifier for academic scoring": "https://github.com/blinasopjani/Student-Dropout-Prediction",
-}
+
 
 # --- GITHUB PROJECTS DATA ---
 GITHUB_PROJECTS = [
@@ -145,101 +141,163 @@ if page == "Home":
             cols[index].write(f"[{platform}]({link})")
 
     # --- EXPERIENCE & QUALIFICATIONS ---
-    st.write("\n")
-    st.subheader("Experience & Qualifications")
-    st.write(
-        """
-    - ✔️ Solid academic and practical background in Computer Science, Big Data, and AI.
-    - ✔️ Experience in developing computer vision systems (YOLO) and ML models (Random Forest, SVM).
-    - ✔️ Proficient in backend architecture using Java (Spring Boot) and Python.
-    - ✔️ Experienced in building predictive pipelines, data automation, and dashboard visualization.
-    """
-    )
+    st.markdown("""
+    <div class="project-card" style="min-height: auto; margin-top: 30px;">
+        <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">✨ Experience & Qualifications</h3>
+        <ul style="color: var(--text-color); opacity: 0.9; line-height: 1.8; font-size: 1.05em; padding-left: 20px; margin-bottom: 0;">
+            <li>Solid academic and practical background in Computer Science, Big Data, and AI.</li>
+            <li>Experience in developing computer vision systems (YOLO) and ML models (Random Forest, SVM).</li>
+            <li>Proficient in backend architecture using Java (Spring Boot) and Python.</li>
+            <li>Experienced in building predictive pipelines, data automation, and dashboard visualization.</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
 
     # --- SKILLS ---
-    st.write("\n")
-    st.subheader("Hard Skills")
-    st.write(
-        """
-    - 👩‍💻 Programming: Python, Java (Spring Boot), C# .NET, JavaScript, React Native
-    - 🤖 Machine Learning & AI: Computer Vision (YOLO, OpenCV), NLP, Scikit-learn
-    - 🗄️ Databases & Tools: PostgreSQL, Git
-    - 📊 Data Visualization: Power BI
-    """
-    )
+    st.markdown("""
+    <div class="project-card" style="min-height: auto;">
+        <h3 style="color: var(--primary-color); margin-bottom: 20px; font-weight: 700;">🛠️ Hard Skills</h3>
+        <div style="margin-bottom: 20px;">
+            <strong style="color: var(--text-color); font-size: 1.05em;">👩‍💻 Programming:</strong>
+            <div class="project-tags" style="margin-top: 10px;">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Java (Spring Boot)</span>
+                <span class="project-tag">C# .NET</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">React Native</span>
+            </div>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <strong style="color: var(--text-color); font-size: 1.05em;">🤖 Machine Learning & AI:</strong>
+            <div class="project-tags" style="margin-top: 10px;">
+                <span class="project-tag">Computer Vision</span>
+                <span class="project-tag">YOLO</span>
+                <span class="project-tag">OpenCV</span>
+                <span class="project-tag">NLP</span>
+                <span class="project-tag">Scikit-learn</span>
+            </div>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <strong style="color: var(--text-color); font-size: 1.05em;">🗄️ Databases & Tools:</strong>
+            <div class="project-tags" style="margin-top: 10px;">
+                <span class="project-tag">PostgreSQL</span>
+                <span class="project-tag">Git</span>
+            </div>
+        </div>
+        <div>
+            <strong style="color: var(--text-color); font-size: 1.05em;">📊 Data Visualization:</strong>
+            <div class="project-tags" style="margin-top: 10px; margin-bottom: 0;">
+                <span class="project-tag">Power BI</span>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
     # --- WORK HISTORY ---
-    st.write("\n")
-    st.subheader("Work History")
-    st.write("---")
+    st.markdown("""
+    <h3 style="color: var(--text-color); margin-top: 40px; margin-bottom: 20px; font-weight: 700;">💼 Work History</h3>
+    
+    <div class="project-card" style="min-height: auto; padding: 20px 24px; margin-bottom: 15px; border-left: 5px solid var(--primary-color);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+            <div>
+                <div style="font-size: 1.15em; font-weight: bold; color: var(--text-color);">Project Manager</div>
+                <div style="color: var(--primary-color); font-weight: 600; margin-top: 4px;">Siqa Store, Remote</div>
+            </div>
+            <div style="background: rgba(255, 77, 141, 0.1); color: var(--primary-color); padding: 4px 14px; border-radius: 12px; font-size: 0.85em; font-weight: bold; border: 1px solid rgba(255, 77, 141, 0.2);">
+                01/2025 - Present
+            </div>
+        </div>
+        <ul style="color: var(--text-color); opacity: 0.85; margin: 0; padding-left: 20px; line-height: 1.6; font-size: 0.95em;">
+            <li>Managing project lifecycles and coordinating remote team operations.</li>
+            <li>Leading strategic planning and project execution processes.</li>
+        </ul>
+    </div>
 
-    # --- JOB 1
-    st.write("🚧", "**Project Manager | Siqa Store, Remote**")
-    st.write("01/2025 - Present")
-    st.write(
-        """
-    - ► Managing project lifecycles and coordinating remote team operations.
-    - ► Leading strategic planning and project execution processes.
-    """
-    )
+    <div class="project-card" style="min-height: auto; padding: 20px 24px; margin-bottom: 15px; border-left: 5px solid var(--primary-color);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+            <div>
+                <div style="font-size: 1.15em; font-weight: bold; color: var(--text-color);">Python & Data Science Intern</div>
+                <div style="color: var(--primary-color); font-weight: 600; margin-top: 4px;">Tectigon LLC, Pristina</div>
+            </div>
+            <div style="background: rgba(255, 77, 141, 0.1); color: var(--primary-color); padding: 4px 14px; border-radius: 12px; font-size: 0.85em; font-weight: bold; border: 1px solid rgba(255, 77, 141, 0.2);">
+                02/2026 - 04/2026
+            </div>
+        </div>
+        <ul style="color: var(--text-color); opacity: 0.85; margin: 0; padding-left: 20px; line-height: 1.6; font-size: 0.95em;">
+            <li>Automated data extraction workflows and built predictive ML models for trend forecasting.</li>
+            <li>Designed executive reports and interactive dashboards using Power BI.</li>
+        </ul>
+    </div>
 
-    # --- JOB 2
-    st.write("\n")
-    st.write("🚧", "**Python & Data Science Intern | Tectigon LLC, Pristina**")
-    st.write("02/2026 - 04/2026")
-    st.write(
-        """
-    - ► Automated data extraction workflows and built predictive ML models for trend forecasting.
-    - ► Designed executive reports and interactive dashboards using Power BI.
-    """
-    )
+    <div class="project-card" style="min-height: auto; padding: 20px 24px; margin-bottom: 15px; border-left: 5px solid var(--primary-color);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+            <div>
+                <div style="font-size: 1.15em; font-weight: bold; color: var(--text-color);">AI Developer Intern</div>
+                <div style="color: var(--primary-color); font-weight: 600; margin-top: 4px;">KPN Telecom, Netherlands</div>
+            </div>
+            <div style="background: rgba(255, 77, 141, 0.1); color: var(--primary-color); padding: 4px 14px; border-radius: 12px; font-size: 0.85em; font-weight: bold; border: 1px solid rgba(255, 77, 141, 0.2);">
+                01/2025 - 06/2025
+            </div>
+        </div>
+        <ul style="color: var(--text-color); opacity: 0.85; margin: 0; padding-left: 20px; line-height: 1.6; font-size: 0.95em;">
+            <li>Developed an automated FTU installation validation system using YOLO object detection.</li>
+            <li>Significantly reduced manual hardware inspection overhead.</li>
+        </ul>
+    </div>
 
-    # --- JOB 3
-    st.write("\n")
-    st.write("🚧", "**AI Developer Intern | KPN Telecom, Netherlands**")
-    st.write("01/2025 - 06/2025")
-    st.write(
-        """
-    - ► Developed an automated FTU installation validation system using YOLO object detection.
-    - ► Significantly reduced manual hardware inspection overhead.
-    """
-    )
+    <div class="project-card" style="min-height: auto; padding: 20px 24px; margin-bottom: 15px; border-left: 5px solid var(--primary-color);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+            <div>
+                <div style="font-size: 1.15em; font-weight: bold; color: var(--text-color);">IT Instructor</div>
+                <div style="color: var(--primary-color); font-weight: 600; margin-top: 4px;">NdreqiNotat.com, Pristina</div>
+            </div>
+            <div style="background: rgba(255, 77, 141, 0.1); color: var(--primary-color); padding: 4px 14px; border-radius: 12px; font-size: 0.85em; font-weight: bold; border: 1px solid rgba(255, 77, 141, 0.2);">
+                09/2024 - 09/2025
+            </div>
+        </div>
+        <ul style="color: var(--text-color); opacity: 0.85; margin: 0; padding-left: 20px; line-height: 1.6; font-size: 0.95em;">
+            <li>Taught programming fundamentals, algorithms, and logical problem-solving.</li>
+            <li>Reinforced clean coding practices across student cohorts.</li>
+        </ul>
+    </div>
 
-    # --- JOB 4
-    st.write("\n")
-    st.write("🚧", "**IT Instructor | NdreqiNotat.com, Pristina**")
-    st.write("09/2024 - 09/2025")
-    st.write(
-        """
-    - ► Taught programming fundamentals, algorithms, and logical problem-solving.
-    - ► Reinforced clean coding practices across student cohorts.
-    """
-    )
-
-    # --- JOB 5
-    st.write("\n")
-    st.write("🚧", "**Java & Web Developer Intern | Sharp Group LTD, Pristina**")
-    st.write("10/2023 - 11/2023")
-    st.write(
-        """
-    - ► Built backend Java applications and web interfaces.
-    - ► Integrated frontend HTML/JS with database endpoints for client projects.
-    """
-    )
+    <div class="project-card" style="min-height: auto; padding: 20px 24px; margin-bottom: 15px; border-left: 5px solid var(--primary-color);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+            <div>
+                <div style="font-size: 1.15em; font-weight: bold; color: var(--text-color);">Java & Web Developer Intern</div>
+                <div style="color: var(--primary-color); font-weight: 600; margin-top: 4px;">Sharp Group LTD, Pristina</div>
+            </div>
+            <div style="background: rgba(255, 77, 141, 0.1); color: var(--primary-color); padding: 4px 14px; border-radius: 12px; font-size: 0.85em; font-weight: bold; border: 1px solid rgba(255, 77, 141, 0.2);">
+                10/2023 - 11/2023
+            </div>
+        </div>
+        <ul style="color: var(--text-color); opacity: 0.85; margin: 0; padding-left: 20px; line-height: 1.6; font-size: 0.95em;">
+            <li>Built backend Java applications and web interfaces.</li>
+            <li>Integrated frontend HTML/JS with database endpoints for client projects.</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
 
     # --- EDUCATION ---
-    st.write("\n")
-    st.subheader("Education")
-    st.write("---")
-    st.write("🎓", "**BSc in Computer Science** - Universum International College, Pristina")
-    st.write("🎓", "**Erasmus Exchange (Big Data & AI)** - Inholland University of Applied Sciences, Netherlands")
-
-    # --- PROJECTS & ACCOMPLISHMENTS ---
-    st.write("\n")
-    st.subheader("Projects & Accomplishments")
-    st.write("---")
-    for project, link in PROJECTS.items():
-        st.write(f"[{project}]({link})")
+    st.markdown("""
+    <h3 style="color: var(--text-color); margin-top: 40px; margin-bottom: 20px; font-weight: 700;">🎓 Education</h3>
+    <div class="project-card" style="min-height: auto; padding: 24px; display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <div style="font-size: 2.5em; background: rgba(255, 77, 141, 0.1); border-radius: 12px; padding: 10px;">🎓</div>
+            <div>
+                <div style="font-size: 1.15em; font-weight: bold; color: var(--text-color);">BSc in Computer Science</div>
+                <div style="color: var(--text-color); opacity: 0.7; margin-top: 4px;">Universum International College, Pristina</div>
+            </div>
+        </div>
+        <div style="border-top: 1px solid rgba(128,128,128,0.2); padding-top: 20px; display: flex; align-items: center; gap: 20px;">
+            <div style="font-size: 2.5em; background: rgba(255, 77, 141, 0.1); border-radius: 12px; padding: 10px;">🌍</div>
+            <div>
+                <div style="font-size: 1.15em; font-weight: bold; color: var(--text-color);">Erasmus Exchange (Big Data & AI)</div>
+                <div style="color: var(--text-color); opacity: 0.7; margin-top: 4px;">Inholland University of Applied Sciences, Netherlands</div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
 elif page == "Projects":
     # --- PROJECTS PAGE ---
@@ -315,15 +373,20 @@ elif page == "Projects":
     )
 
 elif page == "About":
-    st.title("About Me")
-    st.write(f"""
-    I am a Software & AI Engineer passionate about building intelligent systems
-    and full-stack applications. With experience in computer vision, machine learning,
-    and backend development, I combine strong technical skills with a drive to
-    deliver impactful solutions.
-
-    Feel free to reach out via email or connect on LinkedIn!
-    """)
-    st.write("📫", EMAIL)
-    st.write(f"[LinkedIn]({SOCIAL_MEDIA['LinkedIn']}) | [GitHub]({SOCIAL_MEDIA['GitHub']})")
+    st.markdown(f"""
+    <div class="project-card" style="min-height: auto; padding: 40px; margin-top: 20px; text-align: center;">
+        <h1 style="color: var(--primary-color); margin-bottom: 25px; font-weight: 800; font-size: 2.5em;">Hi, I'm Blina! 👋</h1>
+        <p style="font-size: 1.15em; color: var(--text-color); opacity: 0.9; line-height: 1.8; margin-bottom: 35px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            I am a Software & AI Engineer passionate about building intelligent systems
+            and full-stack applications. With experience in computer vision, machine learning,
+            and backend development, I combine strong technical skills with a drive to
+            deliver impactful solutions.
+        </p>
+        <div style="display: flex; gap: 15px; align-items: center; justify-content: center; flex-wrap: wrap;">
+            <a href="mailto:{EMAIL}" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em;">📫 Email Me</a>
+            <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em;">💼 LinkedIn</a>
+            <a href="{SOCIAL_MEDIA['GitHub']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em;">🐙 GitHub</a>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
