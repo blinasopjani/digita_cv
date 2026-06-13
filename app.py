@@ -196,7 +196,11 @@ if page == "Home":
             <div style="font-size: 1.15em; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">Databases & Tools</div>
             <div class="project-tags">
                 <span class="project-tag">PostgreSQL</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">MongoDB</span>
                 <span class="project-tag">Git</span>
+                <span class="project-tag">Docker</span>
+                <span class="project-tag">Linux</span>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -218,6 +222,10 @@ if page == "Home":
             <div style="font-size: 1.15em; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">Data Visualization</div>
             <div class="project-tags">
                 <span class="project-tag">Power BI</span>
+                <span class="project-tag">Tableau</span>
+                <span class="project-tag">Matplotlib</span>
+                <span class="project-tag">Seaborn</span>
+                <span class="project-tag">Plotly</span>
             </div>
         </div>
         """, unsafe_allow_html=True)
