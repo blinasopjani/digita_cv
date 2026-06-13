@@ -284,48 +284,46 @@ elif page == "Projects":
                 st.markdown(
                     f"""
 <div style="
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    border: 1px solid #e91e8c33;
-    border-radius: 16px;
+    background-color: var(--secondary-background-color);
+    border: 1px solid var(--faded-text-40);
+    border-radius: 12px;
     padding: 24px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 24px rgba(233,30,140,0.10);
-    min-height: 260px;
+    min-height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 ">
     <div>
-        <div style="font-size:2.2em; margin-bottom:6px;">{p['icon']}</div>
-        <div style="font-size:0.72em; font-weight:600; letter-spacing:1.5px;
-            color:#e91e8c; text-transform:uppercase; margin-bottom:4px;">
+        <div style="font-size:2.2em; margin-bottom:12px;">{p['icon']}</div>
+        <div style="font-size:0.75em; font-weight:600; letter-spacing:1px;
+            color: var(--primary-color); text-transform:uppercase; margin-bottom:6px;">
             {p['category']}
         </div>
-        <div style="font-size:1.18em; font-weight:700; color:#ffffff; margin-bottom:8px;">
+        <div style="font-size:1.25em; font-weight:700; color: var(--text-color); margin-bottom:10px;">
             {p['name']}
         </div>
-        <div style="font-size:0.88em; color:#b0b8d1; line-height:1.6; margin-bottom:14px;">
+        <div style="font-size:0.9em; color: var(--text-color); opacity: 0.8; line-height:1.5; margin-bottom:18px;">
             {p['description']}
         </div>
-        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;">
-            {"".join(f'<span style="background:#ffffff14; color:#a0b0d0; border-radius:20px; padding:2px 10px; font-size:0.75em;">#{t}</span>' for t in p["topics"])}
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
+            {"".join(f'<span style="background-color: var(--background-color); border: 1px solid var(--faded-text-40); color: var(--text-color); border-radius:12px; padding:4px 12px; font-size:0.75em;">#{t}</span>' for t in p["topics"])}
         </div>
     </div>
-    <div style="display:flex; align-items:center; justify-content:space-between; margin-top:8px;">
-        <span style="font-size:0.82em; color:#e0e0e0; background:#ffffff10;
-            padding:4px 12px; border-radius:20px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-top:10px; padding-top: 15px; border-top: 1px solid var(--faded-text-40);">
+        <span style="font-size:0.85em; color: var(--text-color); font-weight: 500;">
             {lang_icon} {p['language']}
         </span>
         <a href="{p['url']}" target="_blank" style="
-            background: linear-gradient(135deg, #e91e8c, #ff4d8d);
-            color: #fff !important;
-            padding: 6px 18px;
+            color: var(--primary-color);
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.82em;
+            font-size: 0.85em;
             font-weight: 600;
-            text-decoration: none !important;
-            transition: all 0.2s;
-        ">View on GitHub →</a>
+            text-decoration: none;
+        ">View Code ↗</a>
     </div>
 </div>
                     """,
