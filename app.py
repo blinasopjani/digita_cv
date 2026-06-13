@@ -177,7 +177,7 @@ if page == "Home":
     col_skill1, col_skill2 = st.columns(2)
     with col_skill1:
         st.markdown("""
-        <div class="project-card" style="min-height: 200px; padding: 24px; margin-bottom: 20px;">
+        <div class="project-card skill-card" style="min-height: 200px; padding: 24px; margin-bottom: 20px;">
             <div style="font-size: 1.15em; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">Programming</div>
             <div class="project-tags">
                 <span class="project-tag">Python</span>
@@ -188,7 +188,7 @@ if page == "Home":
             </div>
         </div>
         
-        <div class="project-card" style="min-height: 200px; padding: 24px; margin-bottom: 20px;">
+        <div class="project-card skill-card" style="min-height: 200px; padding: 24px; margin-bottom: 20px;">
             <div style="font-size: 1.15em; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">Databases & Tools</div>
             <div class="project-tags">
                 <span class="project-tag">PostgreSQL</span>
@@ -199,7 +199,7 @@ if page == "Home":
 
     with col_skill2:
         st.markdown("""
-        <div class="project-card" style="min-height: 200px; padding: 24px; margin-bottom: 20px;">
+        <div class="project-card skill-card" style="min-height: 200px; padding: 24px; margin-bottom: 20px;">
             <div style="font-size: 1.15em; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">Machine Learning & AI</div>
             <div class="project-tags">
                 <span class="project-tag">Computer Vision</span>
@@ -210,7 +210,7 @@ if page == "Home":
             </div>
         </div>
         
-        <div class="project-card" style="min-height: 200px; padding: 24px; margin-bottom: 20px;">
+        <div class="project-card skill-card" style="min-height: 200px; padding: 24px; margin-bottom: 20px;">
             <div style="font-size: 1.15em; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">Data Visualization</div>
             <div class="project-tags">
                 <span class="project-tag">Power BI</span>
