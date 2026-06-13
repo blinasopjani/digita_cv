@@ -289,16 +289,16 @@ elif page == "Projects":
                     f"""
 <div class="project-card">
     <div>
-        <div style="font-size:2.2em; margin-bottom:12px;">{p['icon']}</div>
+        <div class="project-icon">{p['icon']}</div>
         <div class="project-category">{p['category']}</div>
         <div class="project-title">{p['name']}</div>
         <div class="project-desc">{p['description']}</div>
-        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
+        <div class="project-tags">
             {"".join(f'<span class="project-tag">#{t}</span>' for t in p["topics"])}
         </div>
     </div>
-    <div style="display:flex; align-items:center; justify-content:space-between; margin-top:10px; padding-top: 15px; border-top: 1px solid rgba(128,128,128,0.2);">
-        <span style="font-size:0.85em; color: var(--text-color); font-weight: 500;">
+    <div class="project-footer">
+        <span class="project-language">
             {lang_icon} {p['language']}
         </span>
         <a href="{p['url']}" target="_blank" class="project-btn">View Code ↗</a>
