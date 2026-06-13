@@ -370,11 +370,7 @@ elif page == "Projects":
                     unsafe_allow_html=True,
                 )
 
-    st.write("")
-    st.markdown("---")
-    st.markdown(
-        f"*Shiko të gjitha projektet e mia në [GitHub]({SOCIAL_MEDIA['GitHub']}?tab=repositories)*"
-    )
+
 
 elif page == "About":
     st.markdown(f"""
