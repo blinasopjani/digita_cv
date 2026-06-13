@@ -166,40 +166,52 @@ button[data-testid="stHeaderActionButton"],
 [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 6px;
 }
 
 /* Style individual options as tabs */
 [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label {
-    background-color: rgba(255, 255, 255, 0.03) !important;
-    border: 1.5px solid rgba(255, 77, 141, 0.15) !important;
-    padding: 12px 20px !important;
-    border-radius: 12px !important;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 10px 16px !important;
+    border-radius: 8px !important;
     cursor: pointer !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: all 0.25s ease !important;
     display: flex !important;
     align-items: center !important;
     width: 100% !important;
+    position: relative !important;
 }
 
 /* Hover state */
 [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:hover {
-    background-color: rgba(255, 77, 141, 0.1) !important;
-    border-color: #ff4d8d !important;
-    transform: translateX(6px);
+    background-color: rgba(255, 77, 141, 0.05) !important;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:hover div[data-testid="stMarkdownContainer"] p {
+    color: #ff4d8d !important;
 }
 
 /* Selected/Active state using :has() */
 [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input[checked="true"]),
 [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked) {
+    background-color: rgba(255, 77, 141, 0.08) !important;
+}
+
+/* Left vertical indicator line for selected tab */
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked)::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 25% !important;
+    height: 50% !important;
+    width: 4px !important;
     background-color: #ff4d8d !important;
-    border-color: #ff4d8d !important;
-    box-shadow: 0 4px 15px rgba(255, 77, 141, 0.3) !important;
+    border-radius: 0 4px 4px 0 !important;
 }
 
 /* Selected text color */
 [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked) div[data-testid="stMarkdownContainer"] p {
-    color: #ffffff !important;
+    color: #ff4d8d !important;
     font-weight: 600 !important;
 }
 
@@ -216,6 +228,6 @@ button[data-testid="stHeaderActionButton"],
 [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label div[data-testid="stMarkdownContainer"] p {
     margin: 0 !important;
     font-size: 1.05em !important;
-    color: rgba(255, 255, 255, 0.8);
-    transition: color 0.2s ease;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.25s ease;
 }
