@@ -122,6 +122,10 @@ GITHUB_PROJECTS = [
 
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 
+# Load CSS from external file globally
+with open("styles/main.css", encoding="utf-8") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 # Directly reference files in the assets folder (ensure it exists)
 resume_file = "assets/egezon_cv_12_2024.pdf"
 profile_pic_file = "assets/profile-pic.png"
@@ -344,9 +348,6 @@ elif page == "Projects":
 
     st.write("")
 
-    # Load CSS from external file
-    with open("styles/main.css") as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
     # Render cards in 2-column grid
     for i in range(0, len(filtered), 2):
