@@ -3,7 +3,7 @@ from PIL import Image
 
 # --- GENERAL SETTINGS ---
 PAGE_TITLE = "Digital CV | Blina Sopjani"
-PAGE_ICON = ":wave:"
+PAGE_ICON = ""
 NAME = "Blina Sopjani"
 DESCRIPTION = """
 Software & AI Engineer | AI Automation Engineer & Full-Stack Developer.
@@ -130,12 +130,12 @@ if page == "Home":
         st.title(NAME)
         st.write(DESCRIPTION)
         st.download_button(
-            label="📄 Download Resume",
+            label="Download Resume",
             data=PDFbyte,
             file_name="Blina_Sopjani_CV.pdf",
             mime="application/octet-stream",
         )
-        st.write("📫", EMAIL)
+        st.write(EMAIL)
         cols = st.columns(len(SOCIAL_MEDIA))
         for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
             cols[index].write(f"[{platform}]({link})")
@@ -143,7 +143,7 @@ if page == "Home":
     # --- EXPERIENCE & QUALIFICATIONS ---
     st.markdown("""
     <div class="project-card" style="min-height: auto; margin-top: 30px;">
-        <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">✨ Experience & Qualifications</h3>
+        <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">Experience & Qualifications</h3>
         <ul style="color: var(--text-color); opacity: 0.9; line-height: 1.8; font-size: 1.05em; padding-left: 20px; margin-bottom: 0;">
             <li>Solid academic and practical background in Computer Science, Big Data, and AI.</li>
             <li>Experience in developing computer vision systems (YOLO) and ML models (Random Forest, SVM).</li>
@@ -156,9 +156,9 @@ if page == "Home":
     # --- SKILLS ---
     st.markdown("""
     <div class="project-card" style="min-height: auto;">
-        <h3 style="color: var(--primary-color); margin-bottom: 20px; font-weight: 700;">🛠️ Hard Skills</h3>
+        <h3 style="color: var(--primary-color); margin-bottom: 20px; font-weight: 700;">Hard Skills</h3>
         <div style="margin-bottom: 20px;">
-            <strong style="color: var(--text-color); font-size: 1.05em;">👩‍💻 Programming:</strong>
+            <strong style="color: var(--text-color); font-size: 1.05em;">Programming:</strong>
             <div class="project-tags" style="margin-top: 10px;">
                 <span class="project-tag">Python</span>
                 <span class="project-tag">Java (Spring Boot)</span>
@@ -168,7 +168,7 @@ if page == "Home":
             </div>
         </div>
         <div style="margin-bottom: 20px;">
-            <strong style="color: var(--text-color); font-size: 1.05em;">🤖 Machine Learning & AI:</strong>
+            <strong style="color: var(--text-color); font-size: 1.05em;">Machine Learning & AI:</strong>
             <div class="project-tags" style="margin-top: 10px;">
                 <span class="project-tag">Computer Vision</span>
                 <span class="project-tag">YOLO</span>
@@ -178,14 +178,14 @@ if page == "Home":
             </div>
         </div>
         <div style="margin-bottom: 20px;">
-            <strong style="color: var(--text-color); font-size: 1.05em;">🗄️ Databases & Tools:</strong>
+            <strong style="color: var(--text-color); font-size: 1.05em;">Databases & Tools:</strong>
             <div class="project-tags" style="margin-top: 10px;">
                 <span class="project-tag">PostgreSQL</span>
                 <span class="project-tag">Git</span>
             </div>
         </div>
         <div>
-            <strong style="color: var(--text-color); font-size: 1.05em;">📊 Data Visualization:</strong>
+            <strong style="color: var(--text-color); font-size: 1.05em;">Data Visualization:</strong>
             <div class="project-tags" style="margin-top: 10px; margin-bottom: 0;">
                 <span class="project-tag">Power BI</span>
             </div>
@@ -195,7 +195,7 @@ if page == "Home":
 
     # --- WORK HISTORY ---
     st.markdown("""
-    <h3 style="color: var(--text-color); margin-top: 40px; margin-bottom: 20px; font-weight: 700;">💼 Work History</h3>
+    <h3 style="color: var(--text-color); margin-top: 40px; margin-bottom: 20px; font-weight: 700;">Work History</h3>
     
     <div class="project-card" style="min-height: auto; padding: 20px 24px; margin-bottom: 15px; border-left: 5px solid var(--primary-color);">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
@@ -280,17 +280,15 @@ if page == "Home":
 
     # --- EDUCATION ---
     st.markdown("""
-    <h3 style="color: var(--text-color); margin-top: 40px; margin-bottom: 20px; font-weight: 700;">🎓 Education</h3>
+    <h3 style="color: var(--text-color); margin-top: 40px; margin-bottom: 20px; font-weight: 700;">Education</h3>
     <div class="project-card" style="min-height: auto; padding: 24px; display: flex; flex-direction: column; gap: 20px;">
         <div style="display: flex; align-items: center; gap: 20px;">
-            <div style="font-size: 2.5em; background: rgba(255, 77, 141, 0.1); border-radius: 12px; padding: 10px;">🎓</div>
             <div>
                 <div style="font-size: 1.15em; font-weight: bold; color: var(--text-color);">BSc in Computer Science</div>
                 <div style="color: var(--text-color); opacity: 0.7; margin-top: 4px;">Universum International College, Pristina</div>
             </div>
         </div>
         <div style="border-top: 1px solid rgba(128,128,128,0.2); padding-top: 20px; display: flex; align-items: center; gap: 20px;">
-            <div style="font-size: 2.5em; background: rgba(255, 77, 141, 0.1); border-radius: 12px; padding: 10px;">🌍</div>
             <div>
                 <div style="font-size: 1.15em; font-weight: bold; color: var(--text-color);">Erasmus Exchange (Big Data & AI)</div>
                 <div style="color: var(--text-color); opacity: 0.7; margin-top: 4px;">Inholland University of Applied Sciences, Netherlands</div>
@@ -301,7 +299,7 @@ if page == "Home":
 
 elif page == "Projects":
     # --- PROJECTS PAGE ---
-    st.title("🚀 My Projects")
+    st.title("My Projects")
     st.write("A collection of projects I've built and open-sourced on GitHub.")
     st.markdown(
         f"[View all repositories on GitHub →]({SOCIAL_MEDIA['GitHub']}?tab=repositories)"
@@ -326,14 +324,6 @@ elif page == "Projects":
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
     # Render cards in 2-column grid
-    LANG_ICON = {
-        "Python": "🐍",
-        "Java": "☕",
-        "JavaScript": "⚡",
-        "HTML": "🌐",
-        "Jupyter Notebook": "📓",
-    }
-
     for i in range(0, len(filtered), 2):
         cols = st.columns(2)
         for col_idx, col in enumerate(cols):
@@ -341,13 +331,11 @@ elif page == "Projects":
             if proj_idx >= len(filtered):
                 break
             p = filtered[proj_idx]
-            lang_icon = LANG_ICON.get(p["language"], "💻")
             with col:
                 st.markdown(
                     f"""
 <div class="project-card">
     <div>
-        <div class="project-icon">{p['icon']}</div>
         <div class="project-category">{p['category']}</div>
         <div class="project-title">{p['name']}</div>
         <div class="project-desc">{p['description']}</div>
@@ -357,7 +345,7 @@ elif page == "Projects":
     </div>
     <div class="project-footer">
         <span class="project-language">
-            {lang_icon} {p['language']}
+            {p['language']}
         </span>
         <a href="{p['url']}" target="_blank" class="project-btn">View Code ↗</a>
     </div>
@@ -369,13 +357,13 @@ elif page == "Projects":
     st.write("")
     st.markdown("---")
     st.markdown(
-        f"💡 *Shiko të gjitha projektet e mia në [GitHub]({SOCIAL_MEDIA['GitHub']}?tab=repositories)*"
+        f"*Shiko të gjitha projektet e mia në [GitHub]({SOCIAL_MEDIA['GitHub']}?tab=repositories)*"
     )
 
 elif page == "About":
     st.markdown(f"""
     <div class="project-card" style="min-height: auto; padding: 40px; margin-top: 20px; text-align: center;">
-        <h1 style="color: var(--primary-color); margin-bottom: 25px; font-weight: 800; font-size: 2.5em;">Hi, I'm Blina! 👋</h1>
+        <h1 style="color: var(--primary-color); margin-bottom: 25px; font-weight: 800; font-size: 2.5em;">Hi, I'm Blina!</h1>
         <p style="font-size: 1.15em; color: var(--text-color); opacity: 0.9; line-height: 1.8; margin-bottom: 35px; max-width: 800px; margin-left: auto; margin-right: auto;">
             I am a Software & AI Engineer passionate about building intelligent systems
             and full-stack applications. With experience in computer vision, machine learning,
@@ -383,9 +371,9 @@ elif page == "About":
             deliver impactful solutions.
         </p>
         <div style="display: flex; gap: 15px; align-items: center; justify-content: center; flex-wrap: wrap;">
-            <a href="mailto:{EMAIL}" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em;">📫 Email Me</a>
-            <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em;">💼 LinkedIn</a>
-            <a href="{SOCIAL_MEDIA['GitHub']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em;">🐙 GitHub</a>
+            <a href="mailto:{EMAIL}" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em;">Email Me</a>
+            <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em;">LinkedIn</a>
+            <a href="{SOCIAL_MEDIA['GitHub']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em;">GitHub</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
