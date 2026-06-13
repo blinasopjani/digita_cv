@@ -19,6 +19,98 @@ PROJECTS = {
     "🏆 Student Dropout Prediction API - Random Forest classifier for academic scoring": "https://github.com/blinasopjani/Student-Dropout-Prediction",
 }
 
+# --- GITHUB PROJECTS DATA ---
+GITHUB_PROJECTS = [
+    {
+        "name": "Personal Portfolio",
+        "repo": "Personal-Portfolio",
+        "description": "Modern personal portfolio website showcasing skills, projects, and experience as a Software & AI Engineer.",
+        "language": "HTML",
+        "lang_color": "#e34c26",
+        "topics": ["portfolio", "web", "html"],
+        "url": "https://github.com/blinasopjani/Personal-Portfolio",
+        "icon": "🌐",
+        "category": "Web Development",
+    },
+    {
+        "name": "RSNA Brain Aneurysm Detection",
+        "repo": "RSNA-Aneurysm",
+        "description": "Deep learning pipeline for detecting brain aneurysms from medical imaging data using the RSNA dataset. Computer vision & AI-powered diagnostic tool.",
+        "language": "Python",
+        "lang_color": "#3572A5",
+        "topics": ["deep-learning", "computer-vision", "medical-ai", "python"],
+        "url": "https://github.com/blinasopjani/RSNA-Aneurysm",
+        "icon": "🧠",
+        "category": "AI & Machine Learning",
+    },
+    {
+        "name": "EcoMind AI",
+        "repo": "EcoMind-AI",
+        "description": "AI-powered sustainability platform that helps users track their environmental impact and receive personalized eco-friendly recommendations.",
+        "language": "JavaScript",
+        "lang_color": "#f1e05a",
+        "topics": ["ai", "sustainability", "javascript", "web-app"],
+        "url": "https://github.com/blinasopjani/EcoMind-AI",
+        "icon": "🌱",
+        "category": "AI & Web Development",
+    },
+    {
+        "name": "UniFLIX Movie API",
+        "repo": "uniflix-movie-api",
+        "description": "Secure enterprise-grade streaming backend built with Java Spring Boot. Features JWT authentication, RESTful API design, and PostgreSQL integration.",
+        "language": "Java",
+        "lang_color": "#b07219",
+        "topics": ["spring-boot", "java", "rest-api", "backend", "jwt"],
+        "url": "https://github.com/blinasopjani/uniflix-movie-api",
+        "icon": "🎬",
+        "category": "Backend Development",
+    },
+    {
+        "name": "Student Dropout Prediction",
+        "repo": "Student-Dropout-Prediction",
+        "description": "Machine learning API using Random Forest classifier to predict student dropout risk based on academic and socioeconomic features.",
+        "language": "Jupyter Notebook",
+        "lang_color": "#DA5B0B",
+        "topics": ["machine-learning", "random-forest", "data-science", "python"],
+        "url": "https://github.com/blinasopjani/Student-Dropout-Prediction",
+        "icon": "🎓",
+        "category": "Data Science",
+    },
+    {
+        "name": "Candy Sales Data Analysis",
+        "repo": "Candy-Sales-Data-Analysis",
+        "description": "Comprehensive exploratory data analysis and visualization of candy sales dataset. Includes trend analysis, forecasting, and interactive Power BI dashboards.",
+        "language": "Jupyter Notebook",
+        "lang_color": "#DA5B0B",
+        "topics": ["data-analysis", "visualization", "pandas", "matplotlib"],
+        "url": "https://github.com/blinasopjani/Candy-Sales-Data-Analysis",
+        "icon": "📊",
+        "category": "Data Science",
+    },
+    {
+        "name": "RPS Hand Gesture Recognition",
+        "repo": "rps-hand-gesture-recognition",
+        "description": "Real-time Rock-Paper-Scissors game using computer vision and hand gesture recognition with OpenCV and MediaPipe.",
+        "language": "Python",
+        "lang_color": "#3572A5",
+        "topics": ["computer-vision", "opencv", "mediapipe", "gesture-recognition"],
+        "url": "https://github.com/blinasopjani/rps-hand-gesture-recognition",
+        "icon": "✋",
+        "category": "Computer Vision",
+    },
+    {
+        "name": "Happiness Data Insights",
+        "repo": "happiness-data-insights",
+        "description": "Data analysis project exploring the World Happiness Report dataset to uncover patterns and correlations between happiness scores and socioeconomic indicators.",
+        "language": "Jupyter Notebook",
+        "lang_color": "#DA5B0B",
+        "topics": ["data-science", "visualization", "world-happiness", "analytics"],
+        "url": "https://github.com/blinasopjani/happiness-data-insights",
+        "icon": "😊",
+        "category": "Data Science",
+    },
+]
+
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 
 # Directly reference files in the assets folder (ensure it exists)
@@ -31,7 +123,7 @@ with open(resume_file, "rb") as pdf_file:
 profile_pic = Image.open(profile_pic_file)
 
 # Sidebar navigation
-page = st.sidebar.radio("Navigate", ["Home", "About"])
+page = st.sidebar.radio("Navigate", ["Home", "Projects", "About"])
 
 if page == "Home":
     # --- HERO SECTION ---
@@ -149,6 +241,103 @@ if page == "Home":
     for project, link in PROJECTS.items():
         st.write(f"[{project}]({link})")
 
+elif page == "Projects":
+    # --- PROJECTS PAGE ---
+    st.title("🚀 My Projects")
+    st.write("A collection of projects I've built and open-sourced on GitHub.")
+    st.markdown(
+        f"[View all repositories on GitHub →]({SOCIAL_MEDIA['GitHub']}?tab=repositories)"
+    )
+    st.write("---")
+
+    # Category filter
+    categories = sorted(set(p["category"] for p in GITHUB_PROJECTS))
+    all_cats = ["All"] + categories
+    selected_cat = st.selectbox("Filter by category:", all_cats)
+
+    filtered = (
+        GITHUB_PROJECTS
+        if selected_cat == "All"
+        else [p for p in GITHUB_PROJECTS if p["category"] == selected_cat]
+    )
+
+    st.write("")
+
+    # Render cards in 2-column grid
+    LANG_ICON = {
+        "Python": "🐍",
+        "Java": "☕",
+        "JavaScript": "⚡",
+        "HTML": "🌐",
+        "Jupyter Notebook": "📓",
+    }
+
+    for i in range(0, len(filtered), 2):
+        cols = st.columns(2)
+        for col_idx, col in enumerate(cols):
+            proj_idx = i + col_idx
+            if proj_idx >= len(filtered):
+                break
+            p = filtered[proj_idx]
+            lang_icon = LANG_ICON.get(p["language"], "💻")
+            with col:
+                st.markdown(
+                    f"""
+<div style="
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border: 1px solid #e91e8c33;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 24px rgba(233,30,140,0.10);
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+">
+    <div>
+        <div style="font-size:2.2em; margin-bottom:6px;">{p['icon']}</div>
+        <div style="font-size:0.72em; font-weight:600; letter-spacing:1.5px;
+            color:#e91e8c; text-transform:uppercase; margin-bottom:4px;">
+            {p['category']}
+        </div>
+        <div style="font-size:1.18em; font-weight:700; color:#ffffff; margin-bottom:8px;">
+            {p['name']}
+        </div>
+        <div style="font-size:0.88em; color:#b0b8d1; line-height:1.6; margin-bottom:14px;">
+            {p['description']}
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;">
+            {"".join(f'<span style="background:#ffffff14; color:#a0b0d0; border-radius:20px; padding:2px 10px; font-size:0.75em;">#{t}</span>' for t in p["topics"])}
+        </div>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-top:8px;">
+        <span style="font-size:0.82em; color:#e0e0e0; background:#ffffff10;
+            padding:4px 12px; border-radius:20px;">
+            {lang_icon} {p['language']}
+        </span>
+        <a href="{p['url']}" target="_blank" style="
+            background: linear-gradient(135deg, #e91e8c, #ff4d8d);
+            color: #fff !important;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.82em;
+            font-weight: 600;
+            text-decoration: none !important;
+            transition: all 0.2s;
+        ">View on GitHub →</a>
+    </div>
+</div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+    st.write("")
+    st.markdown("---")
+    st.markdown(
+        f"💡 *Shiko të gjitha projektet e mia në [GitHub]({SOCIAL_MEDIA['GitHub']}?tab=repositories)*"
+    )
+
 elif page == "About":
     st.title("About Me")
     st.write(f"""
@@ -161,3 +350,4 @@ elif page == "About":
     """)
     st.write("📫", EMAIL)
     st.write(f"[LinkedIn]({SOCIAL_MEDIA['LinkedIn']}) | [GitHub]({SOCIAL_MEDIA['GitHub']})")
+
