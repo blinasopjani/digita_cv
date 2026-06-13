@@ -135,3 +135,78 @@ header {
 .skill-card:hover {
     background-color: rgba(255, 77, 141, 0.08) !important;
 }
+
+/* --- SIDEBAR NAVIGATION REDESIGN --- */
+[data-testid="stSidebar"] {
+    background-color: #250510 !important;
+    border-right: 1px solid rgba(255, 77, 141, 0.1);
+}
+
+/* Style the widget title 'Navigate' */
+[data-testid="stSidebar"] [data-testid="stWidgetLabel"] {
+    font-size: 1.2em !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* Style the radio button group */
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Style individual options as tabs */
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1.5px solid rgba(255, 77, 141, 0.15) !important;
+    padding: 12px 20px !important;
+    border-radius: 12px !important;
+    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Hover state */
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:hover {
+    background-color: rgba(255, 77, 141, 0.1) !important;
+    border-color: #ff4d8d !important;
+    transform: translateX(6px);
+}
+
+/* Selected/Active state using :has() */
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input[checked="true"]),
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked) {
+    background-color: #ff4d8d !important;
+    border-color: #ff4d8d !important;
+    box-shadow: 0 4px 15px rgba(255, 77, 141, 0.3) !important;
+}
+
+/* Selected text color */
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked) div[data-testid="stMarkdownContainer"] p {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* Hide default circle inputs */
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label input,
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label div[role="presentation"] {
+    display: none !important;
+}
+
+/* Adjust text margins inside radio label */
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label div[data-testid="stMarkdownContainer"] {
+    margin-left: 0px !important;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label div[data-testid="stMarkdownContainer"] p {
+    margin: 0 !important;
+    font-size: 1.05em !important;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.2s ease;
+}
