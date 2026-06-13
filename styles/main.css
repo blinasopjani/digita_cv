@@ -26,16 +26,25 @@ hr {
     margin-bottom: 5%;
 }
 
+/* Hide default Streamlit options menu (three dots) */
 #MainMenu {
-    visibility: hidden;
+    display: none !important;
 }
 
+/* Hide Streamlit footer */
 footer {
-    visibility: hidden;
+    display: none !important;
 }
 
-header {
-    visibility: hidden;
+/* Allow header to be visible so the sidebar toggle arrow (>) is clickable, but hide top-right buttons */
+[data-testid="stHeader"] {
+    background-color: transparent !important;
+}
+/* Hide the deploy and options button container on the top right */
+[data-testid="stHeader"] [data-testid="stHeaderActionElements"],
+button[data-testid="stHeaderActionButton"],
+[data-testid="stConnectionStatus"] {
+    display: none !important;
 }
 
 /* --- PROJECT CARDS CSS --- */
