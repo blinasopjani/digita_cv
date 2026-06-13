@@ -197,18 +197,6 @@ button[data-testid="stHeaderActionButton"],
     background-color: rgba(255, 77, 141, 0.08) !important;
 }
 
-/* Left vertical indicator line for selected tab */
-[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked)::before {
-    content: "" !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 25% !important;
-    height: 50% !important;
-    width: 4px !important;
-    background-color: #ff4d8d !important;
-    border-radius: 0 4px 4px 0 !important;
-}
-
 /* Selected text color */
 [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked) div[data-testid="stMarkdownContainer"] p {
     color: #ff4d8d !important;
