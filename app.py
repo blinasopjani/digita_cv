@@ -14,6 +14,19 @@ SOCIAL_MEDIA = {
     "GitHub": "https://github.com/blinasopjani",
 }
 
+# --- ICONS ---
+ICONS = {
+    "mail": '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>',
+    "briefcase": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>',
+    "code": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>',
+    "book": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>',
+    "grid": '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 12px;"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>',
+    "github": '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>',
+    "linkedin": '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>',
+    "star": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>',
+    "user": '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 12px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>'
+}
+
 
 # --- GITHUB PROJECTS DATA ---
 GITHUB_PROJECTS = [
@@ -141,9 +154,9 @@ if page == "Home":
             cols[index].write(f"[{platform}]({link})")
 
     # --- EXPERIENCE & QUALIFICATIONS ---
-    st.markdown("""
+    st.markdown(f"""
     <div class="project-card" style="min-height: auto; margin-top: 30px;">
-        <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">Experience & Qualifications</h3>
+        <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">{ICONS['star']}Experience & Qualifications</h3>
         <ul style="color: var(--text-color); opacity: 0.9; line-height: 1.8; font-size: 1.05em; padding-left: 20px; margin-bottom: 0;">
             <li>Solid academic and practical background in Computer Science, Big Data, and AI.</li>
             <li>Experience in developing computer vision systems (YOLO) and ML models (Random Forest, SVM).</li>
@@ -154,9 +167,9 @@ if page == "Home":
     """, unsafe_allow_html=True)
 
     # --- SKILLS ---
-    st.markdown("""
+    st.markdown(f"""
     <div class="project-card" style="min-height: auto;">
-        <h3 style="color: var(--primary-color); margin-bottom: 20px; font-weight: 700;">Hard Skills</h3>
+        <h3 style="color: var(--primary-color); margin-bottom: 20px; font-weight: 700;">{ICONS['code']}Hard Skills</h3>
         <div style="margin-bottom: 20px;">
             <strong style="color: var(--text-color); font-size: 1.05em;">Programming:</strong>
             <div class="project-tags" style="margin-top: 10px;">
@@ -194,8 +207,8 @@ if page == "Home":
     """, unsafe_allow_html=True)
 
     # --- WORK HISTORY ---
-    st.markdown("""
-    <h3 style="color: var(--text-color); margin-top: 40px; margin-bottom: 20px; font-weight: 700;">Work History</h3>
+    st.markdown(f"""
+    <h3 style="color: var(--text-color); margin-top: 40px; margin-bottom: 20px; font-weight: 700;">{ICONS['briefcase']}Work History</h3>
     
     <div class="project-card" style="min-height: auto; padding: 20px 24px; margin-bottom: 15px; border-left: 5px solid var(--primary-color);">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
@@ -279,8 +292,8 @@ if page == "Home":
     """, unsafe_allow_html=True)
 
     # --- EDUCATION ---
-    st.markdown("""
-    <h3 style="color: var(--text-color); margin-top: 40px; margin-bottom: 20px; font-weight: 700;">Education</h3>
+    st.markdown(f"""
+    <h3 style="color: var(--text-color); margin-top: 40px; margin-bottom: 20px; font-weight: 700;">{ICONS['book']}Education</h3>
     <div class="project-card" style="min-height: auto; padding: 24px; display: flex; flex-direction: column; gap: 20px;">
         <div style="display: flex; align-items: center; gap: 20px;">
             <div>
@@ -299,7 +312,7 @@ if page == "Home":
 
 elif page == "Projects":
     # --- PROJECTS PAGE ---
-    st.title("My Projects")
+    st.markdown(f"<h1 style='display:flex; align-items:center;'>{ICONS['grid']}My Projects</h1>", unsafe_allow_html=True)
     st.write("A collection of projects I've built and open-sourced on GitHub.")
     st.markdown(
         f"[View all repositories on GitHub →]({SOCIAL_MEDIA['GitHub']}?tab=repositories)"
@@ -363,7 +376,7 @@ elif page == "Projects":
 elif page == "About":
     st.markdown(f"""
     <div class="project-card" style="min-height: auto; padding: 40px; margin-top: 20px; text-align: center;">
-        <h1 style="color: var(--primary-color); margin-bottom: 25px; font-weight: 800; font-size: 2.5em;">Hi, I'm Blina!</h1>
+        <h1 style="color: var(--primary-color); margin-bottom: 25px; font-weight: 800; font-size: 2.5em; display:flex; justify-content:center; align-items:center;">{ICONS['user']}Hi, I'm Blina!</h1>
         <p style="font-size: 1.15em; color: var(--text-color); opacity: 0.9; line-height: 1.8; margin-bottom: 35px; max-width: 800px; margin-left: auto; margin-right: auto;">
             I am a Software & AI Engineer passionate about building intelligent systems
             and full-stack applications. With experience in computer vision, machine learning,
@@ -371,9 +384,9 @@ elif page == "About":
             deliver impactful solutions.
         </p>
         <div style="display: flex; gap: 15px; align-items: center; justify-content: center; flex-wrap: wrap;">
-            <a href="mailto:{EMAIL}" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em;">Email Me</a>
-            <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em;">LinkedIn</a>
-            <a href="{SOCIAL_MEDIA['GitHub']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em;">GitHub</a>
+            <a href="mailto:{{EMAIL}}" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em; display:flex; align-items:center;">{ICONS['mail']}Email Me</a>
+            <a href="{{SOCIAL_MEDIA['LinkedIn']}}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em; display:flex; align-items:center;">{ICONS['linkedin']}LinkedIn</a>
+            <a href="{{SOCIAL_MEDIA['GitHub']}}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em; display:flex; align-items:center;">{ICONS['github']}GitHub</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
