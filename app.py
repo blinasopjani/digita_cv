@@ -148,10 +148,13 @@ if page == "Home":
             file_name="Blina_Sopjani_CV.pdf",
             mime="application/octet-stream",
         )
-        st.write(EMAIL)
-        cols = st.columns(len(SOCIAL_MEDIA))
-        for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
-            cols[index].write(f"[{platform}]({link})")
+        st.markdown(f"""
+        <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap; margin-top: 20px;">
+            <a href="mailto:{EMAIL}" class="project-btn" style="text-decoration: none; padding: 8px 20px; font-size: 0.9em; display:flex; align-items:center;">{ICONS['mail']}Email</a>
+            <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 8px 20px; font-size: 0.9em; display:flex; align-items:center;">{ICONS['linkedin']}LinkedIn</a>
+            <a href="{SOCIAL_MEDIA['GitHub']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 8px 20px; font-size: 0.9em; display:flex; align-items:center;">{ICONS['github']}GitHub</a>
+        </div>
+        """, unsafe_allow_html=True)
 
     # --- EXPERIENCE & QUALIFICATIONS ---
     st.markdown(f"""
