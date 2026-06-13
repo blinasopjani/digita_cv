@@ -154,7 +154,7 @@ if page == "Home":
         )
         st.markdown(f"""
         <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap; margin-top: 20px;">
-            <a href="mailto:{EMAIL}" class="project-btn" style="text-decoration: none; padding: 8px 20px; font-size: 0.9em; display:flex; align-items:center;">{ICONS['mail']}Email</a>
+            <a href="mailto:{EMAIL}" target="_blank" class="project-btn" style="text-decoration: none; padding: 8px 20px; font-size: 0.9em; display:flex; align-items:center;">{ICONS['mail']}Email</a>
             <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 8px 20px; font-size: 0.9em; display:flex; align-items:center;">{ICONS['linkedin']}LinkedIn</a>
             <a href="{SOCIAL_MEDIA['GitHub']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 8px 20px; font-size: 0.9em; display:flex; align-items:center;">{ICONS['github']}GitHub</a>
         </div>
@@ -401,9 +401,9 @@ elif page == "About":
             deliver impactful solutions.
         </p>
         <div style="display: flex; gap: 15px; align-items: center; justify-content: center; flex-wrap: wrap;">
-            <a href="mailto:{{EMAIL}}" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em; display:flex; align-items:center;">{ICONS['mail']}Email Me</a>
-            <a href="{{SOCIAL_MEDIA['LinkedIn']}}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em; display:flex; align-items:center;">{ICONS['linkedin']}LinkedIn</a>
-            <a href="{{SOCIAL_MEDIA['GitHub']}}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em; display:flex; align-items:center;">{ICONS['github']}GitHub</a>
+            <a href="mailto:{EMAIL}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em; display:flex; align-items:center;">{ICONS['mail']}Email Me</a>
+            <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em; display:flex; align-items:center;">{ICONS['linkedin']}LinkedIn</a>
+            <a href="{SOCIAL_MEDIA['GitHub']}" target="_blank" class="project-btn" style="text-decoration: none; padding: 10px 24px; font-size: 1em; display:flex; align-items:center;">{ICONS['github']}GitHub</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
