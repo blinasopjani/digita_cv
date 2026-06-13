@@ -171,11 +171,15 @@ if page == "Home":
 
     # --- SKILLS ---
     st.markdown(f"""
-    <div class="project-card" style="min-height: auto;">
-        <h3 style="color: var(--primary-color); margin-bottom: 20px; font-weight: 700;">{ICONS['code']}Hard Skills</h3>
-        <div style="margin-bottom: 20px;">
-            <strong style="color: var(--text-color); font-size: 1.05em;">Programming:</strong>
-            <div class="project-tags" style="margin-top: 10px;">
+    <h3 style="color: var(--text-color); margin-top: 40px; margin-bottom: 20px; font-weight: 700;">{ICONS['code']}Hard Skills</h3>
+    """, unsafe_allow_html=True)
+
+    col_skill1, col_skill2 = st.columns(2)
+    with col_skill1:
+        st.markdown("""
+        <div class="project-card" style="min-height: 200px; padding: 24px; margin-bottom: 20px;">
+            <div style="font-size: 1.15em; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">Programming</div>
+            <div class="project-tags">
                 <span class="project-tag">Python</span>
                 <span class="project-tag">Java (Spring Boot)</span>
                 <span class="project-tag">C# .NET</span>
@@ -183,9 +187,21 @@ if page == "Home":
                 <span class="project-tag">React Native</span>
             </div>
         </div>
-        <div style="margin-bottom: 20px;">
-            <strong style="color: var(--text-color); font-size: 1.05em;">Machine Learning & AI:</strong>
-            <div class="project-tags" style="margin-top: 10px;">
+        
+        <div class="project-card" style="min-height: 200px; padding: 24px; margin-bottom: 20px;">
+            <div style="font-size: 1.15em; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">Databases & Tools</div>
+            <div class="project-tags">
+                <span class="project-tag">PostgreSQL</span>
+                <span class="project-tag">Git</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col_skill2:
+        st.markdown("""
+        <div class="project-card" style="min-height: 200px; padding: 24px; margin-bottom: 20px;">
+            <div style="font-size: 1.15em; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">Machine Learning & AI</div>
+            <div class="project-tags">
                 <span class="project-tag">Computer Vision</span>
                 <span class="project-tag">YOLO</span>
                 <span class="project-tag">OpenCV</span>
@@ -193,21 +209,14 @@ if page == "Home":
                 <span class="project-tag">Scikit-learn</span>
             </div>
         </div>
-        <div style="margin-bottom: 20px;">
-            <strong style="color: var(--text-color); font-size: 1.05em;">Databases & Tools:</strong>
-            <div class="project-tags" style="margin-top: 10px;">
-                <span class="project-tag">PostgreSQL</span>
-                <span class="project-tag">Git</span>
-            </div>
-        </div>
-        <div>
-            <strong style="color: var(--text-color); font-size: 1.05em;">Data Visualization:</strong>
-            <div class="project-tags" style="margin-top: 10px; margin-bottom: 0;">
+        
+        <div class="project-card" style="min-height: 200px; padding: 24px; margin-bottom: 20px;">
+            <div style="font-size: 1.15em; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">Data Visualization</div>
+            <div class="project-tags">
                 <span class="project-tag">Power BI</span>
             </div>
         </div>
-    </div>
-    """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
     # --- WORK HISTORY ---
     st.markdown(f"""
