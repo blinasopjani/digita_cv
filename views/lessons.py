@@ -234,10 +234,33 @@ CREATE TABLE emp_dept   (emp_num INT REFERENCES employee, dept_num VARCHAR REFER
 </div>
     """), unsafe_allow_html=True)
 
-    st.code("""-- Snowflake Schema Example
+    st.markdown("#### Star Schema Example")
+    st.code("""-- Star Schema Example: Denormalized dimension
+CREATE TABLE dim_customer (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR,
+    city_name VARCHAR,
+    region_name VARCHAR,
+    country VARCHAR
+);
+
+CREATE TABLE fact_sales (
+    sale_id INT PRIMARY KEY,
+    customer_id INT REFERENCES dim_customer,
+    amount DECIMAL
+);""", language="sql")
+
+    st.markdown("#### Snowflake Schema Example")
+    st.code("""-- Snowflake Schema Example: Normalized dimensions
 CREATE TABLE dim_region   (region_id INT PRIMARY KEY, region_name VARCHAR, country VARCHAR);
 CREATE TABLE dim_city     (city_id INT PRIMARY KEY, city_name VARCHAR, region_id INT REFERENCES dim_region);
-CREATE TABLE dim_customer (customer_id INT PRIMARY KEY, name VARCHAR, city_id INT REFERENCES dim_city);""", language="sql")
+CREATE TABLE dim_customer (customer_id INT PRIMARY KEY, name VARCHAR, city_id INT REFERENCES dim_city);
+
+CREATE TABLE fact_sales (
+    sale_id INT PRIMARY KEY,
+    customer_id INT REFERENCES dim_customer,
+    amount DECIMAL
+);""", language="sql")
 
     # Chapter 8: SCD
     st.markdown(textwrap.dedent(f"""
