@@ -227,10 +227,8 @@ CREATE TABLE emp_dept   (emp_num INT REFERENCES employee, dept_num VARCHAR REFER
 <div class="project-card" style="margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
     <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">7. Star Schema vs Snowflake Schema</h3>
     <p style="color: var(--text-color); opacity: 0.9;">Data warehouse schemas use a central <strong>Fact Table</strong> (measurable events) surrounded by <strong>Dimension Tables</strong> (context: who, what, when, where).</p>
-    
     <h4 style="color: #f0a868; margin-top: 20px;">Star Schema</h4>
     <p style="font-size: 0.9em; opacity: 0.9;">Dimensions are flat and denormalized. Directly linked to the Fact table. Less joins, faster reads.</p>
-    
     <h4 style="color: #f0a868; margin-top: 15px;">Snowflake Schema</h4>
     <p style="font-size: 0.9em; opacity: 0.9;">Dimensions split into sub-tables (Normalized). E.g., Customer → City → Region. Less redundancy, more JOINs.</p>
 </div>
