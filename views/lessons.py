@@ -9,7 +9,7 @@ def render_lessons():
 
     # Chapter 1: SQL BASICS
     st.markdown(textwrap.dedent(f"""
-<div class="project-card" style="margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
+<div class="project-card" style="min-height: auto; justify-content: flex-start; margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
     <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">1. Database & SQL Basics</h3>
     <p style="color: var(--text-color); opacity: 0.9; line-height: 1.6;">
         A <strong>relational database</strong> organizes data into tables (rows + columns). Tables connect through relationships using <strong>keys</strong>. SQL is the language used to create, query, and manage that data.
@@ -54,7 +54,7 @@ DELETE FROM customers WHERE customer_id = 1;""", language="sql")
 
     # Chapter 2: DBMS vs RDBMS
     st.markdown(textwrap.dedent(f"""
-<div class="project-card" style="margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
+<div class="project-card" style="min-height: auto; justify-content: flex-start; margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
     <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">2. DBMS vs RDBMS</h3>
     <p style="color: var(--text-color); opacity: 0.9;">Before diving into SQL relationships, it helps to understand the two types of database management systems and how they differ.</p>
     <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
@@ -87,7 +87,7 @@ DELETE FROM customers WHERE customer_id = 1;""", language="sql")
 
     # Chapter 3: RELATIONSHIPS
     st.markdown(textwrap.dedent(f"""
-<div class="project-card" style="margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
+<div class="project-card" style="min-height: auto; justify-content: flex-start; margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
     <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">3. SQL Relationships</h3>
     <p style="color: var(--text-color); opacity: 0.9; line-height: 1.6;">
         Relationships define how tables connect through foreign keys, ensuring <strong>referential integrity</strong> — you can't have an order for a customer that doesn't exist.
@@ -114,7 +114,7 @@ CREATE TABLE student_courses (
 
     # Chapter 4: NORMALIZATION
     st.markdown(textwrap.dedent(f"""
-<div class="project-card" style="margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
+<div class="project-card" style="min-height: auto; justify-content: flex-start; margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
     <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">4. Database Normalization</h3>
     <p style="color: var(--text-color); opacity: 0.9; line-height: 1.6;">
         Normalization organizes tables to eliminate redundancy and prevent data anomalies. Applied progressively through <strong>Normal Forms</strong>.
@@ -163,7 +163,7 @@ CREATE TABLE emp_dept   (emp_num INT REFERENCES employee, dept_num VARCHAR REFER
 
     # Chapter 5: DATA ECOSYSTEM
     st.markdown(textwrap.dedent(f"""
-<div class="project-card" style="margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
+<div class="project-card" style="min-height: auto; justify-content: flex-start; margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
     <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">5. The Data Ecosystem</h3>
     <p style="color: var(--text-color); opacity: 0.9;">DB vs Warehouse vs Mart vs Lake: Not all data storage is the same. Each system serves a different purpose in the data lifecycle.</p>
     <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
@@ -189,7 +189,7 @@ CREATE TABLE emp_dept   (emp_num INT REFERENCES employee, dept_num VARCHAR REFER
 
     # Chapter 6: OLAP vs OLTP
     st.markdown(textwrap.dedent(f"""
-<div class="project-card" style="margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
+<div class="project-card" style="min-height: auto; justify-content: flex-start; margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
     <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">6. OLAP vs OLTP</h3>
     <p style="color: var(--text-color); opacity: 0.9;">The two dominant processing paradigms — most organizations run both in parallel.</p>
     <table style="width: 100%; border-collapse: collapse; font-size: 0.9em; text-align: left; opacity: 0.9; margin-top: 15px;">
@@ -224,7 +224,7 @@ CREATE TABLE emp_dept   (emp_num INT REFERENCES employee, dept_num VARCHAR REFER
 
     # Chapter 7: SCHEMAS
     st.markdown(textwrap.dedent(f"""
-<div class="project-card" style="margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
+<div class="project-card" style="min-height: auto; justify-content: flex-start; margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
     <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">7. Star Schema vs Snowflake Schema</h3>
     <p style="color: var(--text-color); opacity: 0.9;">Data warehouse schemas use a central <strong>Fact Table</strong> (measurable events) surrounded by <strong>Dimension Tables</strong> (context: who, what, when, where).</p>
     <h4 style="color: #f0a868; margin-top: 20px;">Star Schema</h4>
@@ -264,7 +264,7 @@ CREATE TABLE fact_sales (
 
     # Chapter 8: SCD
     st.markdown(textwrap.dedent(f"""
-<div class="project-card" style="margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
+<div class="project-card" style="min-height: auto; justify-content: flex-start; margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
     <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">8. Slowly Changing Dimensions (SCD)</h3>
     <p style="color: var(--text-color); opacity: 0.9;">Dimension data changes over time. SCDs define how to handle those changes while preserving historical accuracy.</p>
 </div>
@@ -332,7 +332,7 @@ WHERE customer_id = 101;""", language="sql")
 
     # Chapter 9: APACHE ICEBERG
     st.markdown(textwrap.dedent(f"""
-<div class="project-card" style="margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
+<div class="project-card" style="min-height: auto; justify-content: flex-start; margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
     <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">9. Apache Iceberg: Spark SQL vs DataFrames</h3>
     <p style="color: var(--text-color); opacity: 0.9;">Iceberg is a modern open table format for huge datasets. You can use <strong>Spark SQL</strong> (familiar) or <strong>DataFrame API</strong> (programmatic).</p>
 </div>
@@ -387,7 +387,7 @@ keep_df.writeTo("local.df.data_points").option("mergeSchema","true").using("iceb
 
     # Conclusion: How It All Connects
     st.markdown(textwrap.dedent(f"""
-<div class="project-card" style="margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
+<div class="project-card" style="min-height: auto; justify-content: flex-start; margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
     <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">How It All Connects</h3>
     <p style="color: var(--text-color); opacity: 0.9; margin-bottom: 15px;">
         <strong>RDBMS / OLTP</strong> (Normalized 3NF, ACID) 
