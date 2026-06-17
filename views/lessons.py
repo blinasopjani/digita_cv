@@ -267,28 +267,68 @@ CREATE TABLE fact_sales (
 <div class="project-card" style="margin-bottom: 20px; border-left: 5px solid var(--primary-color);">
     <h3 style="color: var(--primary-color); margin-bottom: 15px; font-weight: 700;">8. Slowly Changing Dimensions (SCD)</h3>
     <p style="color: var(--text-color); opacity: 0.9;">Dimension data changes over time. SCDs define how to handle those changes while preserving historical accuracy.</p>
-    <ul style="font-size: 0.95em; opacity: 0.9;">
-        <li><strong>Type 0 (Fixed):</strong> Immutable. Never changes (e.g. DOB).</li>
-        <li><strong>Type 1 (Overwrite):</strong> Old value replaced. No history kept.</li>
-        <li><strong>Type 2 (New Row):</strong> Most common. New record per change. Full history via surrogate key + dates.</li>
-        <li><strong>Type 3 (New Column):</strong> Adds a previous_value column. Only one prior value kept.</li>
-        <li><strong>Type 4 (History Table):</strong> Current in main table; history in separate table.</li>
-        <li><strong>Type 6 (Hybrid):</strong> Combines 1+2+3.</li>
-    </ul>
 </div>
     """), unsafe_allow_html=True)
     
-    st.markdown("#### Type 2 — Example")
-    st.code("""-- When customer Amir moves city — expire old row, insert new row
+    with st.expander("Type 0 (Fixed)"):
+        st.write("Immutable. The value never changes (e.g. Date of Birth). If a source system sends an update, it is ignored or raises an error.")
+        st.code("""-- Ignore incoming changes
+-- No SQL operation is performed when data changes in the source.""", language="sql")
+
+    with st.expander("Type 1 (Overwrite)"):
+        st.write("Old value is replaced. No history is kept. Used for fixing typos or when history doesn't matter.")
+        st.code("""-- When customer Amir moves from Delhi to Mumbai
+UPDATE dim_customer 
+SET city = 'Mumbai' 
+WHERE customer_id = 101;
+
+-- Result: Only 'Mumbai' exists. 'Delhi' is lost forever.""", language="sql")
+
+    with st.expander("Type 2 (New Row)"):
+        st.write("Most common method. A new record is inserted per change. Full history is preserved using a surrogate key, start/end dates, and a current flag.")
+        st.code("""-- 1. Expire the old row
 UPDATE dim_customer
 SET end_date = '2024-06-01', is_current = FALSE
 WHERE customer_id = 101 AND is_current = TRUE;
 
-INSERT INTO dim_customer VALUES (2, 101, 'Amir', 'Mumbai', '2024-06-01', NULL, TRUE);
+-- 2. Insert the new row
+INSERT INTO dim_customer (surr_key, customer_id, name, city, start_date, end_date, is_current)
+VALUES (2, 101, 'Amir', 'Mumbai', '2024-06-01', NULL, TRUE);
 
 -- surr | cust | city   | start      | end        | current
 -- 1    | 101  | Delhi  | 2020-01-01 | 2024-06-01 | FALSE  ← history
 -- 2    | 101  | Mumbai | 2024-06-01 | NULL       | TRUE   ← current""", language="sql")
+
+    with st.expander("Type 3 (New Column)"):
+        st.write("Adds a specific column to keep the immediate previous value. Limited history (only keeps the last change).")
+        st.code("""-- Move current city to previous_city, then update current city
+UPDATE dim_customer 
+SET previous_city = current_city, 
+    current_city = 'Mumbai' 
+WHERE customer_id = 101;
+
+-- cust | previous_city | current_city
+-- 101  | Delhi         | Mumbai""", language="sql")
+
+    with st.expander("Type 4 (History Table)"):
+        st.write("Keeps the main dimension table small by only storing the current state, while moving all historical states to a separate history table.")
+        st.code("""-- 1. Archive the current state into the history table
+INSERT INTO dim_customer_history 
+SELECT * FROM dim_customer WHERE customer_id = 101;
+
+-- 2. Overwrite the state in the main table
+UPDATE dim_customer 
+SET city = 'Mumbai' 
+WHERE customer_id = 101;""", language="sql")
+
+    with st.expander("Type 6 (Hybrid)"):
+        st.write("Combines Type 1, 2, and 3. Adds a new row for history (Type 2), stores the previous value in a column (Type 3), and overwrites the 'current value' across all historical rows (Type 1) for easy querying.")
+        st.code("""-- Very complex to implement.
+-- Notice how 'current_city' is Mumbai for both rows, allowing us to group by the current state even on historical rows.
+
+-- surr | cust | hist_city | current_city | start      | end        | current
+-- 1    | 101  | Delhi     | Mumbai       | 2020-01-01 | 2024-06-01 | FALSE
+-- 2    | 101  | Mumbai    | Mumbai       | 2024-06-01 | NULL       | TRUE""", language="sql")
 
     # Chapter 9: APACHE ICEBERG
     st.markdown(textwrap.dedent(f"""
