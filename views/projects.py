@@ -1,4 +1,5 @@
 import streamlit as st
+import textwrap
 from config import GITHUB_PROJECTS, SOCIAL_MEDIA, ICONS
 
 def render_projects():
@@ -31,25 +32,25 @@ def render_projects():
             if proj_idx >= len(filtered):
                 break
             p = filtered[proj_idx]
+            
+            tags_html = "".join(f'<span class="project-tag">#{t}</span>' for t in p["topics"])
+            
             with col:
-                st.markdown(
-                    f"""
+                st.markdown(textwrap.dedent(f"""
 <div class="project-card">
     <div>
-        <div class="project-category">{{p['category']}}</div>
-        <div class="project-title">{{p['name']}}</div>
-        <div class="project-desc">{{p['description']}}</div>
+        <div class="project-category">{p['category']}</div>
+        <div class="project-title">{p['name']}</div>
+        <div class="project-desc">{p['description']}</div>
         <div class="project-tags">
-            {"".join(f'<span class="project-tag">#{t}</span>' for t in p["topics"])}
+            {tags_html}
         </div>
     </div>
     <div class="project-footer">
         <span class="project-language">
-            {{p['language']}}
+            {p['language']}
         </span>
-        <a href="{{p['url']}}" target="_blank" class="project-btn">View Code ↗</a>
+        <a href="{p['url']}" target="_blank" class="project-btn">View Code ↗</a>
     </div>
 </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
+                """), unsafe_allow_html=True)
