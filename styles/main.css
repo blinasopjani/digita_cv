@@ -1,0 +1,144 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+/* Global reset */
+* {
+    box-sizing: border-box;
+    font-family: 'Readex Pro';
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white !important;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #ff4d8d !important;
+    text-decoration: none;
+}
+
+ul { list-style-type: none; }
+
+hr { margin-top: 0; margin-bottom: 5%; }
+
+/* Hide default Streamlit UI */
+#MainMenu { display: none !important; }
+footer { display: none !important; }
+[data-testid="stHeader"] { background-color: transparent !important; }
+[data-testid="stHeader"] [data-testid="stHeaderActionElements"],
+[data-testid="stHeader"] button[data-testid="stHeaderActionButton"],
+[data-testid="stConnectionStatus"] { display: none !important; }
+
+/* Project cards */
+.project-card {
+    background-color: var(--secondary-background-color);
+    border: 1px solid rgba(128,128,128,0.2);
+    border-left: 2px solid var(--primary-color); /* reduced from 5px to 2px */
+    border-radius: 16px;
+    padding: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+}
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    border-color: #ff4d8d; /* matches primary color */
+}
+.project-card h3,
+.project-card h4 { margin: 2px 0; }
+.project-card p { margin: 2px 0; line-height: 1.4; }
+
+/* Tags and buttons */
+.project-tag {
+    background-color: var(--background-color);
+    border: 1px solid rgba(128,128,128,0.25);
+    color: var(--text-color);
+    border-radius: 12px;
+    padding: 4px 12px;
+    font-size: 0.75em;
+    transition: background-color 0.2s;
+}
+.project-tag:hover {
+    background-color: rgba(255,77,141,0.1);
+    border-color: #ff4d8d;
+}
+.project-btn {
+    color: #ff4d8d !important;
+    background-color: transparent;
+    border: 1.5px solid #ff4d8d;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+.project-btn:hover {
+    background-color: #ff4d8d;
+    color: white !important;
+}
+
+/* Sidebar redesign */
+[data-testid="stSidebar"] {
+    background-color: #250510 !important;
+    border-right: 1px solid rgba(255,77,141,0.1);
+}
+[data-testid="stSidebar"] [data-testid="stWidgetLabel"] {
+    font-size: 1.2em !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 10px 16px !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:hover {
+    background-color: rgba(255,77,141,0.05) !important;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:hover div[data-testid="stMarkdownContainer"] p {
+    color: #ff4d8d !important;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input[checked="true"]),
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked) {
+    background-color: rgba(255,77,141,0.08) !important;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked) div[data-testid="stMarkdownContainer"] p {
+    color: #ff4d8d !important;
+    font-weight: 600 !important;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label input,
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label div[role="presentation"] {
+    display: none !important;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label div[data-testid="stMarkdownContainer"] {
+    margin-left: 0 !important;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label div[data-testid="stMarkdownContainer"] p {
+    margin: 0 !important;
+    font-size: 1.05em !important;
+    color: rgba(255,255,255,0.7);
+    transition: color 0.25s ease;
+}
